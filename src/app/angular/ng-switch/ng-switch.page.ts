@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgSwitchPage implements OnInit {
 
+  public tipoUsuario: string = 'usuario';
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
 }
