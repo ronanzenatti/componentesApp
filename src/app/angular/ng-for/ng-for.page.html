@@ -56,14 +56,27 @@
     <tr *ngFor="let item of listaProdutos">
       <td>{{item.nome}}</td>
       <!-- Formata o numero, colocando R$ antes -->
-      <td style="text-align: right">{{item.valor | currency:'R$ '}}</td>
+      <td style="text-align: right">{{ item.valor | currency:'R$ ' }}</td>
     </tr>
     <tr>
       <th style="text-align: center">TOTAL</th>
       <!-- Formata o numero, colocando R$ antes e utiliza a virgula para decimal -->
-      <th style="text-align: right">{{retornaTotal().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}}
+      <th style="text-align: right">{{ retornaTotal().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}
       </th>
     </tr>
   </table>
+
+  <h3>Adicionar elementos ao Array.</h3>
+  <p>Tamanho do Array: <strong>{{listaArray.length}}</strong></p>
+
+  <p *ngFor="let item of listaArray; let i = index">
+    Adicionou: <strong>{{ item }}</strong>, Posição: <strong>{{ i }}</strong>
+  </p>
+
+  <ion-item>
+    <ion-label position="stacked">Digite algo: </ion-label>
+    <ion-input [(ngModel)]="valor" placeholder="Digite Aqui."></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="adicionarNoArray()">Adicionar</ion-button>
 
 </ion-content>

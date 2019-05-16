@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgForPage implements OnInit {
 
+  public valor;
+
   public listaArray = []; //variavel do tipo ARRAY vazia.
 
   public listaDeFrutas = ['Banana', 'Maçã', 'Pera', 'Uva']; //variavel do tipo ARRAY, com uma lista de frutas.
@@ -30,8 +32,12 @@ export class NgForPage implements OnInit {
   ngOnInit() {
   }
 
-  public adicionarNoArray(variavel) {
-    this.listaArray.push(variavel);
+  // Adiciona os dados da variavel valor no array.
+  public adicionarNoArray() {
+    // Push adiciona a variavel no array.
+    this.listaArray.push(this.valor);
+
+    this.valor = null; // Limpa a variavel.
   }
 
   public excluirPeloIndex(posicao: number) {
