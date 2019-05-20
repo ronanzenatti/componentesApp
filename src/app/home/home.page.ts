@@ -20,7 +20,7 @@ export class HomePage {
     { titulo: 'NgFor', pagina: '/ng-for' },
     { titulo: 'NgSwitch', pagina: '/ng-switch' },
     { titulo: 'Ngclass', pagina: '/ng-class' },
-    { titulo: 'Form', pagina: '/form' }
+    { titulo: 'Form', pagina: '/forms' }
   ];
 
   /**

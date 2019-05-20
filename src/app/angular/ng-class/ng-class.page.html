@@ -38,7 +38,7 @@
   </ion-item>
 
   <!-- condição ? estilos se verdadeiro : estilos se falso -->
-  <p [ngClass]="idade <= 18 ? 'bold font-red' : 'font-green italic'"> Apenas uma condição</p>
+  <p [ngClass]="idade < 18 ? 'bold font-red' : 'font-green italic'"> Apenas uma condição</p>
 
   <!-- estilos de maior que 18, estilos se menor que 18 -->
   <p [ngClass]="{'bold font-green': idade >= 18, 'font-red italic': idade < 18}"> Várias condições </p>

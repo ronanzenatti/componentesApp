@@ -1,3 +1,4 @@
+// Importações padrões do Ionic 4
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -12,7 +13,11 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    // Importações padrões, usei quebra de linha para melhor visualização
+    BrowserModule, IonicModule.forRoot(), AppRoutingModule
+
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -20,4 +25,4 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

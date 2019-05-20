@@ -9,8 +9,8 @@ const routes: Routes = [
   { path: 'ng-if', loadChildren: './angular/ng-if/ng-if.module#NgIfPageModule' },
   { path: 'ng-switch', loadChildren: './angular/ng-switch/ng-switch.module#NgSwitchPageModule' },
   { path: 'ng-class', loadChildren: './angular/ng-class/ng-class.module#NgClassPageModule' },
-  { path: 'form', loadChildren: './angular/form/form.module#FormPageModule' },
   { path: 'metodos', loadChildren: './angular/metodos/metodos.module#MetodosPageModule' },
+  { path: 'forms', loadChildren: './angular/forms/forms.module#FormsPageModule' },
 ];
 
 @NgModule({

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>forms</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="formLogin">
+    <ion-item>
+      <ion-label position="stacked">E-mail</ion-label>
+      <ion-input formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Senha</ion-label>
+      <ion-input formControlName="senha" type="password"
+        [ngClass]="{'invalido': (!formLogin.get('senha').valid && formLogin.get('senha').dirty), 'valido': (formLogin.get('senha').valid && formLogin.get('senha').dirty)}">
+      </ion-input>
+    </ion-item>
+  </form>
+  <ion-button expand="full" color="primary" (click)="login()">Create Account!</ion-button>
+</ion-content>
