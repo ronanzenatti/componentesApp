@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 // Importações necessárias para formulários
-import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 /*
 * Para funcionar os formulários, precisamos importar (adicionar)
@@ -17,8 +17,6 @@ export class FormsPage implements OnInit {
 
   // Cria os formulários
   public formLogin: FormGroup;
-
-  public formCadastro: FormGroup;
 
   constructor(public formBuilder: FormBuilder) {
 
@@ -37,11 +35,6 @@ export class FormsPage implements OnInit {
       email: ['email@padrao.com', Validators.email],
       senha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8)])]
     });
-
-    this.formCadastro = formBuilder.group({
-      nome: ['']
-    });
-
 
   }
 

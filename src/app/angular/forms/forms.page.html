@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>forms</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Formulários</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -18,5 +21,6 @@
       </ion-input>
     </ion-item>
   </form>
-  <ion-button expand="full" color="primary" (click)="login()">Create Account!</ion-button>
+  <ion-button expand="full" color="primary" (click)="login()">LOGIN!</ion-button>
+  <ion-button fill="clear" expand="block" color="primary" routerLink="/registro-form">CRIAR CONTA!</ion-button>
 </ion-content>
