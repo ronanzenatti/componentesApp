@@ -35,7 +35,8 @@ export class RegistroFormPage implements OnInit {
       { tipo: 'email', mensagem: 'E-mail Inválido.' },
     ],
     dataNascimento: [
-      { tipo: 'required', mensagem: 'O campo Data de Nascimento é obrigatório.' }
+      { tipo: 'required', mensagem: 'O campo Data de Nascimento é obrigatório.' },
+      { tipo: 'pattern', mensagem: 'O formato deve ser: 00/00/0000.' }
     ],
     senha: [
       { tipo: 'required', mensagem: 'É obrigatório confirmar senha.' },
@@ -57,7 +58,7 @@ export class RegistroFormPage implements OnInit {
       // Declara os campos do formulário.
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       cpf: ['', Validators.compose([Validators.required, CpfValidator.cpfValido])],
-      dataNascimento: ['', Validators.required],
+      dataNascimento: ['', Validators.compose([Validators.required, Validators.pattern(/^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/)])],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       senha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8), Validators.required])],
       confirmaSenha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8), Validators.required])]

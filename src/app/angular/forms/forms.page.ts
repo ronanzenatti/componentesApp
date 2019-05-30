@@ -17,6 +17,7 @@ export class FormsPage implements OnInit {
 
   // Cria os formulários
   public formLogin: FormGroup;
+  public email;
 
   constructor(public formBuilder: FormBuilder) {
 
@@ -33,7 +34,7 @@ export class FormsPage implements OnInit {
     this.formLogin = formBuilder.group({
       // Declara os campos do formulário.
       email: ['email@padrao.com', Validators.email],
-      senha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8)])]
+      senha: ['', Validators.compose([Validators.minLength(6), Validators.maxLength(8), Validators.required])]
     });
 
   }
@@ -42,9 +43,13 @@ export class FormsPage implements OnInit {
   }
 
   public login() {
-    // Imprime os dados do formulário.
-    console.log(this.formLogin.value);
-
+    if (this.formLogin.valid) {
+      console.log(this.formLogin.value);
+      this.email = this.formLogin.value.email;
+      alert("Formulário salvo e válido!");
+    } else {
+      alert("formulário INVÁLIDO");
+    }
   }
 
 }
